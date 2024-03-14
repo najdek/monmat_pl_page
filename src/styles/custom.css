@@ -1,0 +1,12 @@
+.monmat-logo {
+    background-image:url(/logo.svg);
+    width: 170px;
+    background-repeat: no-repeat;
+}
+@media (prefers-color-scheme: dark) {
+    .monmat-logo {
+        background-image:url(/logo-dark.svg);
+        width: 170px;
+        background-repeat: no-repeat;
+    }
+}
