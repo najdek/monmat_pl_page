@@ -1,8 +1,8 @@
 import { NavbarElement } from "./_elements";
 import { FooterElement } from "./_elements";
 
-import { Cabin } from "next/font/google";
-const cabin = Cabin({ subsets: ["latin"] });
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 import { Card } from "flowbite-react";
 
@@ -36,9 +36,9 @@ export default function AboutUs() {
 
             <NavbarElement />
             <main
-                className={`flex min-h-screen flex-col items-center ${cabin.className}`}
+                className={`flex min-h-screen flex-col items-center ${inter.className}`}
             >
-                <div className={`${cabin.className} p-0 sm:p-6 items-center`}>
+                <div className={`${inter.className} p-0 sm:p-6 items-center`}>
 
                     <MyCard text={<span>Welcome to MONMAT, where creativity meets quality in every T-shirt and mug we produce. <br />With over six years of experience in the industry, we've become specialists in crafting personalized apparel and drinkware that make a statement.</span>} img="./a_tshirt.svg" align="left">
                     </MyCard>
