@@ -12,7 +12,7 @@ export default function Home() {
 
 
       <main
-       className={`flex min-h-screen flex-col items-center ${cabin.className}`}
+        className={`flex min-h-screen flex-col items-center ${cabin.className}`}
       >
         hey
       </main>
