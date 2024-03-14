@@ -23,7 +23,7 @@ export function NavbarElement() {
 
   return (
     <Navbar className={`${cabin.className}`} fluid={true} rounded={true}>
-      <Navbar.Brand href="/">
+      <Navbar.Brand as={Link} prefetch={false} href="/">
         <div className="mr-3 h-6 sm:h-9 monmat-logo"></div>
       </Navbar.Brand>
       <Navbar.Toggle />
@@ -37,7 +37,7 @@ export function NavbarElement() {
 
         <NavbarLink title="Gallery" href="/gallery"></NavbarLink>
 
-        <NavbarLink title="Contact" href="/contact"></NavbarLink>
+        <NavbarLink title="Contact us" href="/contact-us"></NavbarLink>
 
       </Navbar.Collapse>
     </Navbar>
