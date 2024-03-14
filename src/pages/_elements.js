@@ -1,14 +1,10 @@
 import { Navbar } from "flowbite-react";
 import { Footer } from 'flowbite-react';
-import { Button } from "flowbite-react";
-
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 import Link from 'next/link';
-
 import { useRouter } from 'next/router';
-
 
 function NavbarLink({ title, href }) {
   const router = useRouter();
@@ -48,15 +44,5 @@ export function FooterElement() {
         <Footer.Copyright href="#" by="MONMAT Mateusz Najdek" year={2024} />
       </div>
     </Footer>
-  )
-}
-
-function scrollToTop() {
-
-}
-
-export function ScrollToTopElement() {
-  return (
-    <></>
   )
 }

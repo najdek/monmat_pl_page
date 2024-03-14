@@ -1,11 +1,9 @@
 import { NavbarElement } from "./_elements";
 import { FooterElement } from "./_elements";
+import { Card } from "flowbite-react";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
-
-import { Card } from "flowbite-react";
-
 
 function MyCard({ text, img, align }) {
 
@@ -25,15 +23,9 @@ function MyCard({ text, img, align }) {
 }
 
 
-
-
-
-
 export default function AboutUs() {
     return (
         <>
-
-
             <NavbarElement />
             <main
                 className={`flex min-h-screen flex-col items-center ${inter.className}`}
@@ -61,8 +53,6 @@ export default function AboutUs() {
                 </div>
             </main>
             <FooterElement />
-
-
         </>
     )
 }
