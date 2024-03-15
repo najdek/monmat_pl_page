@@ -21,7 +21,7 @@ export function NavbarElement() {
   return (
     <Navbar className={`${inter.className}`} fluid={true} rounded={true}>
       <Navbar.Brand as={Link} prefetch={false} href="/">
-        <div className="mr-3 h-6 sm:h-9 monmat-logo"></div>
+        <div className="mr-3 h-7 sm:h-9 monmat-logo"></div>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>

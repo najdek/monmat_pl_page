@@ -1,5 +1,5 @@
-import { NavbarElement } from "./_elements";
-import { FooterElement } from "./_elements";
+import { NavbarElement } from "../elements";
+import { FooterElement } from "../elements";
 import { Card } from "flowbite-react";
 import { Button } from 'flowbite-react';
 import { HiShoppingCart } from 'react-icons/hi';
@@ -7,12 +7,17 @@ import { HiShoppingCart } from 'react-icons/hi';
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
+import Head from "next/head";
+
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>monmat.pl - T-Shirts and Mugs</title>
+      </Head>
       <NavbarElement />
-      <main className={`flex min-h-[calc(100vh-56px)] flex-col items-center align-middle bg-black ${inter.className}`} >
-        <div className="min-h-[calc(100vh-56px)] min-w-full absolute z-0 bg-cover bg-center dark:opacity-30" Style={`background-image: url("./i_bg.jpg");`}>      </div>
+      <main className={`flex min-h-[calc(100vh-48px)] flex-col items-center align-middle bg-black ${inter.className}`} >
+        <div className="min-h-[calc(100vh-48px)] min-w-full absolute z-0 bg-cover bg-center dark:opacity-30" Style={`background-image: url("./i_bg.jpg");`}>      </div>
         <div className="m-auto z-10 text-center">
           <Card className="max-w-3xl text-center z-10 bg-transparent backdrop-blur-md bg-white/70 border-opacity-20 dark:bg-transparent dark:bg-gray-800/50 dark:border-opacity-20 rounded-2xl rounded-b-none">
             <h1 className={`text-2xl sm:text-4xl font-bold`}>Custom-Made for You</h1>

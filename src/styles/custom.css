@@ -1,12 +1,47 @@
 .monmat-logo {
-    background-image:url(/logo.svg);
+    background-image: url(/logo.svg);
     width: 170px;
     background-repeat: no-repeat;
 }
+
 @media (prefers-color-scheme: dark) {
     .monmat-logo {
-        background-image:url(/logo-dark.svg);
+        background-image: url(/logo-dark.svg);
         width: 170px;
         background-repeat: no-repeat;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #dfdfdf;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6a6a6a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #535353;
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #000000;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #535353;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #6a6a6a;
     }
 }
