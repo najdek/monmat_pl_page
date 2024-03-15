@@ -8,6 +8,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -16,8 +17,14 @@ export default function Home() {
         <title>monmat.pl - T-Shirts and Mugs</title>
       </Head>
       <NavbarElement />
-      <main className={`flex min-h-[calc(100vh-48px)] flex-col items-center align-middle bg-black ${inter.className}`} >
-        <div className="min-h-[calc(100vh-48px)] min-w-full absolute z-0 bg-cover bg-center dark:opacity-30" Style={`background-image: url("./i_bg.jpg");`}>      </div>
+      <main className={`flex min-h-[calc(100vh-48px)] flex-col items-center align-middle bg-black relative ${inter.className}`} >
+        <Image
+        className="min-h-[calc(100vh-48px)] min-w-full absolute z-0 dark:opacity-30"
+        src="/i_bg.jpg"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        />
         <div className="m-auto z-10 text-center">
           <Card className="max-w-3xl text-center z-10 bg-transparent backdrop-blur-md bg-white/70 border-opacity-20 dark:bg-transparent dark:bg-gray-800/50 dark:border-opacity-20 rounded-2xl rounded-b-none">
             <h1 className={`text-2xl sm:text-4xl font-bold`}>Custom-Made for You</h1>
