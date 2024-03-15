@@ -9,23 +9,45 @@ import { Button } from "flowbite-react";
 import { MdEmail } from "react-icons/md";
 import Head from "next/head";
 
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "common",
+        "contact-us",
+        "navbar"
+      ])),
+      // Will be passed to the page component as props
+    },
+  }
+}
+
 export default function ContactUs() {
+    const { t } = useTranslation(["contact-us", "navbar"])
     return (
         <>
             <Head>
-                <title>monmat.pl - Contact us</title>
+               <title>{t("title")}</title>
             </Head>
-            <NavbarElement />
+            <NavbarElement
+                translations={
+                    {
+                        "home": t("navbar:home"),
+                        "about-us": t("navbar:about-us"),
+                        "contact-us": t("navbar:contact-us")
+                    }} />
             <main
                 className={`flex min-h-[calc(100vh-48px)] flex-col items-center ${inter.className} items-center align-middle`}
             >
                 <div className={`${inter.className} p-0 sm:p-6 items-center max-w-3xl m-auto`}>
                     <Card>
-                        <h3 className="text-2xl">Contact us</h3>
-                        <p className="text-xl whitespace-pre-wrap">{`Have a question or need assistance? We're here to help! Feel free to reach out to us via email. \nWhether you have inquiries about our products, need assistance with an order, or just want to say hello, we'd love to hear from you. \nWe strive to respond to all inquiries promptly. \nThank you for choosing MONMAT!`}</p>
+                        <h3 className="text-2xl">{t("contact-us")}</h3>
+                        <p className="text-xl whitespace-pre-wrap">{t("contact-text")}</p>
                         <Button color="info" size="xl" className="m-auto" href="mailto:kontakt@monmat.pl">
                             <MdEmail className="mr-2 h-5 w-5" />
-                            Email us
+                            {t("email-us")}
                         </Button>
                     </Card>
                 </div>

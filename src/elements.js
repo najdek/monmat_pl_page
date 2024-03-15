@@ -16,8 +16,8 @@ function NavbarLink({ title, href }) {
   )
 }
 
-export function NavbarElement() {
-
+export function NavbarElement(t) {
+  let translations = t["translations"];
   return (
     <Navbar className={`${inter.className}`} fluid={true} rounded={true}>
       <Navbar.Brand as={Link} prefetch={false} href="/">
@@ -25,12 +25,11 @@ export function NavbarElement() {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
+        <NavbarLink title={translations["home"]} href="/"></NavbarLink>
 
-        <NavbarLink title="Home" href="/"></NavbarLink>
+        <NavbarLink title={translations["about-us"]} href="/about-us"></NavbarLink>
 
-        <NavbarLink title="About us" href="/about-us"></NavbarLink>
-
-        <NavbarLink title="Contact us" href="/contact-us"></NavbarLink>
+        <NavbarLink title={translations["contact-us"]} href="/contact-us"></NavbarLink>
 
       </Navbar.Collapse>
     </Navbar>
