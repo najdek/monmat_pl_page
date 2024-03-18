@@ -1,5 +1,5 @@
-import { NavbarElement } from "../elements";
-import { FooterElement } from "../elements";
+import Layout from "@/components/layout";
+
 import { Card } from "flowbite-react";
 import { Button } from 'flowbite-react';
 import { HiShoppingCart } from 'react-icons/hi';
@@ -26,20 +26,13 @@ export async function getStaticProps({ locale }) {
 }
 
 
-export default function Home() {
-  const { t } = useTranslation(["home", "navbar"])
+export default function Page() {
+  const { t } = useTranslation(["home"])
   return (
     <>
       <Head>
         <title>{t("title")}</title>
       </Head>
-      <NavbarElement
-        translations={
-          {
-            "home": t("navbar:home"),
-            "about-us": t("navbar:about-us"),
-            "contact-us": t("navbar:contact-us")
-          }} />
       <main className={`flex min-h-[calc(100vh-48px)] flex-col items-center align-middle bg-black relative ${inter.className}`} >
         <Image
           className="min-h-[calc(100vh-48px)] min-w-full absolute z-0 dark:opacity-30"
@@ -47,6 +40,7 @@ export default function Home() {
           layout="fill"
           objectFit="cover"
           objectPosition="center"
+          alt=""
         />
         <div className="m-auto z-10 text-center">
           <Card className="max-w-3xl text-center z-10 bg-transparent backdrop-blur-md bg-white/70 border-opacity-20 dark:bg-transparent dark:bg-gray-800/50 dark:border-opacity-20 rounded-2xl rounded-b-none">
@@ -59,8 +53,16 @@ export default function Home() {
           </Button>
         </div>
       </main>
-      <FooterElement />
     </>
 
   );
+}
+
+
+Page.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
 }

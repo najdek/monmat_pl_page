@@ -1,5 +1,4 @@
-import { NavbarElement } from "../elements";
-import { FooterElement } from "../elements";
+import Layout from "@/components/layout";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -12,32 +11,25 @@ import Head from "next/head";
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, [
-        "common",
-        "contact-us",
-        "navbar"
-      ])),
-      // Will be passed to the page component as props
-    },
-  }
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, [
+                "common",
+                "contact-us",
+                "navbar"
+            ])),
+            // Will be passed to the page component as props
+        },
+    }
 }
 
-export default function ContactUs() {
+export default function Page() {
     const { t } = useTranslation(["contact-us", "navbar"])
     return (
         <>
             <Head>
-               <title>{t("title")}</title>
+                <title>{t("title")}</title>
             </Head>
-            <NavbarElement
-                translations={
-                    {
-                        "home": t("navbar:home"),
-                        "about-us": t("navbar:about-us"),
-                        "contact-us": t("navbar:contact-us")
-                    }} />
             <main
                 className={`flex min-h-[calc(100vh-48px)] flex-col items-center ${inter.className} items-center align-middle`}
             >
@@ -52,7 +44,14 @@ export default function ContactUs() {
                     </Card>
                 </div>
             </main>
-            <FooterElement />
         </>
+    )
+}
+
+Page.getLayout = function getLayout(page) {
+    return (
+        <Layout>
+            {page}
+        </Layout>
     )
 }
